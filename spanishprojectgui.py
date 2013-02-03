@@ -7,7 +7,7 @@ import futureconditionalirregulars as fcirreg
 
 pygame.init()
 
-size = [700,500]
+size = [675,350]
 screen = pygame.display.set_mode(size)
 
 white = [0xFF, 0xFF, 0xFF]
@@ -17,8 +17,37 @@ red = (250,0,0)
 yellow = (255,255,0)
 aqua = (0,255,255)
 
+waitinginput = pygame.image.load("enterverbwaiting_edited-1.jpg")
+textbox = waitinginput
+gettinginput = pygame.image.load("gettingverb_edited-1.jpg")
+#submitinput = pygame.image.load("submitverb_edited-1.psd")
+personmenu = pygame.image.load("chooseperson_edited-2.jpg")
+personyo = pygame.image.load("choosepersonselectyo2_edited-1.jpg")
+persontu = pygame.image.load("choosepersonselecttu_edited-1.jpg")
+personel = pygame.image.load("choosepersonselectel_edited-1.jpg")
+personnosotros = pygame.image.load("choosepersonselectnosotros_edited-1.jpg")
+personvosotros = pygame.image.load("choosepersonselectvosotros_edited-1.jpg")
+personellos = pygame.image.load("choosepersonselectellos_edited-1.jpg")
+pmenu = personmenu
+
+tensemenu = pygame.image.load("tenseselection_edited-1.jpg")
+tmenu = tensemenu
+
+tensemenu2 = pygame.image.load("tenseselection2_edited-1.jpg")
+tmenu2 = tensemenu2
+
+moodmenu = pygame.image.load("moodselection_edited-1.jpg")
+moodindicative = pygame.image.load("moodselectionselectindicative_edited-1.jpg")
+moodsubjunctive = pygame.image.load("moodselectionselectsubjunctive_edited-1.jpg")
+moodimperative = pygame.image.load("moodselectionselectimperative_edited-1.jpg")
+mmenu = moodmenu
+
+resetbutton = pygame.image.load("resetbutton_edited-1.jpg")
+pressedresetbutton = pygame.image.load("pressedresetbutton_edited-2.jpg")
+rbutton = resetbutton
 
 pygame.display.set_caption("Bub's Spanish Conjugator")
+
 
 class Verb():
 	def __init__(self, verb, person, tense, mood):
@@ -598,25 +627,25 @@ class Block(pygame.sprite.Sprite):
 block_list = pygame.sprite.RenderPlain()
 all_sprites_list = pygame.sprite.RenderPlain()
 
-block = Block(red, 50,50)
-block2 = Block(aqua, 50,50)
-block3 = Block(aqua, 50, 50)
-block4 = Block(aqua, 50, 50)
-block5 = Block(aqua, 50,50)
-block6 = Block(aqua, 50, 50)
-block7 = Block(aqua, 50, 50)
-block8 = Block(aqua, 50,50)
-block9 = Block(aqua, 50, 50)
-block10 = Block(aqua, 50, 50)
-block11 = Block(yellow, 50,50)
-block12 = Block(yellow, 50, 50)
-block13 = Block(yellow, 50,50)
-block14 = Block(aqua, 50,50)
-block15 = Block(aqua, 50,50)
-block16 = Block(aqua, 50,50)
-block17 = Block(aqua, 50,50)
-block18 = Block(aqua, 50,50)
-block19 = Block(aqua, 50,50)
+block = Block(white, 80,25)
+block2 = Block(aqua, 100,25)
+block3 = Block(aqua, 100, 25)
+block4 = Block(aqua, 100, 25)
+block5 = Block(aqua, 100,22)
+block6 = Block(aqua, 100, 25)
+block7 = Block(aqua, 100, 25)
+block8 = Block(aqua, 100,25)
+block9 = Block(aqua, 100, 22)
+block10 = Block(aqua, 100, 25)
+block11 = Block(yellow, 100,25)
+block12 = Block(yellow, 100, 25)
+block13 = Block(yellow, 100,22)
+block14 = Block(aqua, 100,25)
+block15 = Block(aqua, 100,25)
+block16 = Block(aqua, 100,25)
+block17 = Block(aqua, 100,25)
+block18 = Block(aqua, 100,25)
+block19 = Block(aqua, 100,20)
 all_sprites_list.add(block)
 all_sprites_list.add(block2)
 all_sprites_list.add(block3)
@@ -638,70 +667,75 @@ all_sprites_list.add(block18)
 all_sprites_list.add(block19)
 block_list.add(block2)
 
-x = 150
+x = 50
 y = 50
-x1 = 0
-y1 = 150
-x2 = 100
+x1 = 200
+y1 = 100
+x2 = 200
 y2 = 150
 x3 = 200
-y3 = 150
-x4 = 300
-y4 = 150
-x5 = 400
-y5 = 150
-x6 = 500
-y6 = 150
-x7 = 600
-y7 = 150
-x8 = 150
-y8 = 250
+y3 = 125
+x4 = 200
+y4 = 200
+x5 = 200
+y5 = 175
+
+x6 = 350
+y6 = 100
+x7 = 350
+y7 = 125
+x8 = 350
+y8 = 175
 x9 = 350
-y9 = 250
-x12 = 200
-y12 = 300
-x13 = 300
-y13 = 300
-x14 = 400
-y14 = 300
+y9 = 150
+
+x12 = 500
+y12 = 100
+x13 = 500
+y13 = 125
+x14 = 500
+y14 = 150
+
 x15 = 50
-y15 = 400
-x16 = 150
-y16 = 400
-x17 = 250
-y17 = 400
-x18 = 350
-y18 = 400
-x19 = 450
-y19 = 400
-x20 = 550
-y20 = 400
+y15 = 100
+x16 = 50
+y16 = 125
+x17 = 50
+y17 = 150
+x18 = 50
+y18 = 175
+x19 = 50
+y19 = 200
+x20 = 50
+y20 = 225
+
 done=False
 
 #Creates the text for the boxes
-block.t = "Reset"
-block2.t = "Present"
-block3.t = "Imperfect"
-block4.t  = "Preterite"
-block5.t = "Conditional"
-block6.t = "Future"
-block7.t = "Present Perfect"
-block8.t = "Pluperfect"
-block9.t = "Conditional Perfect"
-block10.t = "Future Perfect"
-block11.t = "Indicative"
-block12.t = "Subjunctive"
-block13.t = "Imperative"
-block14.t = "Yo"
-block15.t = "Tu"
-block16.t = "El/Ella/Usted"
-block17.t = "Nosotros"
-block18.t = "Vosotros"
-block19.t = "Ellos/Ellas/Ustedes"
+block.t = " "#"Reset"
+block2.t = " "#"Present"
+block3.t = " "#"Imperfect"
+block4.t  = " "#"Preterite"
+block5.t = " "#"Conditional"
+block6.t = " "#"Future"
+block7.t = " "#"Present Perfect"
+block8.t = " "#"Pluperfect"
+block9.t = " "#"Conditional Perfect"
+block10.t = " "#"Future Perfect"
+block11.t = " "#"Indicative"
+block12.t = " "#"Subjunctive"
+block13.t = " "#"Imperative"
+block14.t = " "#"Yo"
+block15.t = " "#"Tu"
+block16.t = " "#"El/Ella/Usted"
+block17.t = " "#"Nosotros"
+block18.t = " "#"Vosotros"
+block19.t = " "#"Ellos/Ellas/Ustedes"
 
 clock = pygame.time.Clock()
 verb = " "
 conjugation = " "
+sentence = " "
 font = pygame.font.Font(None,25)
 #Main Loop
 while done == False:
@@ -726,43 +760,56 @@ while done == False:
 			tense = "future perfect"
 		if block11.state == "on":
 			mood = "indicative"
+			mmenu = moodindicative
 		if block12.state == "on":
 			mood = "subjunctive"
+			mmenu = moodsubjunctive
 		if block13.state == "on":
 			mood = "imperative"
+			mmenu = moodimperative
 		if block14.state == "on":
 			person = "yo"
+			pmenu = personyo
 		if block15.state == "on":
 			person = "tu"
+			pmenu = persontu
 		if block16.state == "on":
 			person = "el"
+			pmenu = personel
 		if block17.state == "on":
 			person = "nosotros"
+			pmenu = personnosotros
 		if block18.state == "on":
 			person = "vosotros"
+			pmenu = personvosotros
 		if block19.state == "on":
 			person = "ellos"
+			pmenu = personellos
 		if event.type == pygame.QUIT:
 			done = True
 		if event.type == pygame.KEYUP:
 			if event.key == pygame.K_RETURN:
+				#textbox = submitinput
 				#person = "yo"
 				#tense = "present"
 				#mood = "indicative"
 				verb1 = Verb(verb, person, tense, mood)	
 				verb1.whichmood()
-				verb = "The " + verb1.p + " form of " + verb1.v + " in " + verb1.t + " " + verb1.m + " is " + conjugation + "."
-				conjugation = verb1.c
+				sentence = "The " + verb1.p + " form of" + verb1.v + " in " + verb1.t + " " + verb1.m + " is " + verb1.c + "."
+				#conjugation = verb1.c
 			elif event.key == pygame.K_BACKSPACE:
 				verb = verb[:-1]
+			#elif event.key == pygame.K_SPACE:
+			#	rbutton = pressedresetbutton
 			elif event.key < 127:
 				verb = verb + chr(event.key)
+				textbox = gettinginput
 		if event.type == pygame.MOUSEBUTTONDOWN:
 			xcoord = block.positionx()
 			ycoord = block.positiony()
 			if pos[0] in xcoord and pos[1] in ycoord:
 				block.changestate()
-				
+				rbutton = pressedresetbutton
 			elif pos[0] in block2.positionx() and pos[1] in block2.positiony():
 				block2.changestate()
 				
@@ -802,6 +849,7 @@ while done == False:
 				block19.changestate()
 			else:
 				block.resetstate()
+				rbutton = resetbutton
 				block2.resetstate()	
 				block3.resetstate()
 				block4.resetstate()
@@ -820,6 +868,11 @@ while done == False:
 				block17.resetstate()
 				block18.resetstate()
 				block19.resetstate()
+				textbox = waitinginput
+				pmenu = personmenu
+				tmenu = tensemenu
+				tmenu2 = tensemenu2
+				mmenu = moodmenu
 				
 	#All event processing above this comment
 	
@@ -888,7 +941,12 @@ while done == False:
 	
 	if block.state == "on":
 		verb = " "
-		conjugation = " "
+		sentence = " "
+		textbox = waitinginput
+		pmenu = personmenu
+		tmenu = tensemenu
+		tmenu2 = tensemenu2
+		mmenu = moodmenu
 	
 	
 	#All game logic above this comment
@@ -897,14 +955,19 @@ while done == False:
 	
 	screen.fill(white)
 	
+	screen.blit(textbox, (198,10))
 	
 	font = pygame.font.Font(None,25)
 	text = font.render(verb, True, black)
-	screen.blit(text, [250,20])
+	screen.blit(text, [200,20])
 	
 	font = pygame.font.Font(None,25)
+	text = font.render(sentence, True, black)
+	screen.blit(text, [50,300])
+	
+	'''font = pygame.font.Font(None,25)
 	text = font.render(conjugation, True, black)
-	screen.blit(text, [250,50])
+	screen.blit(text, [50,350])'''
 	
 	block_list.draw(screen)
 	all_sprites_list.draw(screen)
@@ -928,6 +991,13 @@ while done == False:
 	block18.text()
 	block19.text()
 	#All draw code above this comment
+	
+	
+	screen.blit(pmenu, (50,100))
+	screen.blit(tmenu, (200, 100))
+	screen.blit(tmenu2, (350,100))
+	screen.blit(mmenu, (500, 100))
+	screen.blit(rbutton, (50,50))
 	
 	pygame.display.flip()
 			
