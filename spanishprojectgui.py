@@ -1,3 +1,4 @@
+#uses theme from http://www.designkindle.com/2011/01/19/simple-ui-elements/
 import pygame
 pi = 3.14159
 import __future__
@@ -166,8 +167,51 @@ class Verb():
 		tense = "present"
 		root = self.root(self.v)
 		type = self.ending(self.v)
-		if root in fcirreg.stemchange:
+		'''if root in fcirreg.stemchange:
 			root = fcirreg.stemchange[root]
+		#there's an extra space at the begining of the verb for some reason
+		list = ['almorzar','cerrar','comenzar','confesar','contar','costar','defender','devolver','dormir','empezar','encontrar','entender','jugar','medir','morir','mostrar','pedir','pensar','perder','poder','preferir','querer','recordar','referir','repetir','resolver','sentir','servir','sonar','volar','volver']	
+		for i in range(len(list)):
+			list[i] = " " + list[i]
+		
+		if self.v in list:
+			if "o" in self.v:
+				self.v = verb
+				self.v = self.v.replace("o", "ue")
+				root = self.root(self.v)
+				self.v = verb'''
+		for i in range(len(fcirreg.eiestemchange)):
+			fcirreg.eiestemchange[i] = " " + fcirreg.eiestemchange[i]
+		if self.v in fcirreg.eiestemchange:
+			if self.p == "nosotros" or self.p == "vosotros":
+				pass
+			else:
+				self.v = verb
+				self.v = self.v.replace("e", "ie")
+				root = self.root(self.v)
+				self.v = verb
+		for i in range(len(fcirreg.eistemchange)):
+			fcirreg.eistemchange[i] = " " + fcirreg.eistemchange[i]
+		if self.v in fcirreg.eistemchange:
+			if self.p == "nosotros" or self.p == "vosotros":
+				pass
+			else:
+				self.v = verb
+				self.v = self.v.replace("e", "i")
+				root = self.root(self.v)
+				self.v = verb
+		for i in range(len(fcirreg.ouestemchange)):
+			fcirreg.ouestemchange[i] = " " + fcirreg.ouestemchange[i]
+		if self.v in fcirreg.ouestemchange:
+			if self.p == "nosotros" or self.p == "vosotros":
+				pass
+			else:
+				self.v = verb
+				self.v = self.v.replace("o", "ue")
+				root = self.root(self.v)
+				self.v = verb
+		
+				
 		
 		if type == "ar":
 			if self.p == "yo":
