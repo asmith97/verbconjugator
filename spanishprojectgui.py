@@ -31,7 +31,12 @@ personvosotros = pygame.image.load("choosepersonselectvosotros_edited-1.jpg")
 personellos = pygame.image.load("choosepersonselectellos_edited-1.jpg")
 pmenu = personmenu
 
-tensemenu = pygame.image.load("tenseselection_edited-1.jpg")
+tensemenu = pygame.image.load("tenseselection_edited-2.jpg")
+tensepresent = pygame.image.load("tenseselectionselectpresent_edited-2.jpg")
+tensepreterite = pygame.image.load("tenseselectionselectpreterite_edited-3.jpg")
+tenseimperfect = pygame.image.load("tenseselectionselectimperfect_edited-3.jpg")
+tensefuture = pygame.image.load("tenseselectionselectfuture_edited-3.jpg")
+tenseconditional = pygame.image.load("tenseselectionselectconditional_edited-3.jpg")
 tmenu = tensemenu
 
 tensemenu2 = pygame.image.load("tenseselection2_edited-1.jpg")
@@ -777,7 +782,7 @@ block18.t = " "#"Vosotros"
 block19.t = " "#"Ellos/Ellas/Ustedes"
 
 clock = pygame.time.Clock()
-verb = " "
+verb = ""
 conjugation = " "
 sentence = " "
 font = pygame.font.Font(None,25)
@@ -786,14 +791,19 @@ while done == False:
 	for event in pygame.event.get():
 		if block2.state == "on":
 			tense = "present"
+			tmenu = tensepresent
 		if block3.state == "on":
 			tense = "imperfect"
+			tmenu = tenseimperfect
 		if block4.state == "on":
 			tense = "preterite"
+			tmenu = tensepreterite
 		if block5.state == "on":
 			tense = "conditional"
+			tmenu = tenseconditional
 		if block6.state == "on":
 			tense = "future"
+			tmenu = tensefuture
 		if block7.state == "on":
 			tense = "present perfect"
 		if block8.state == "on":
