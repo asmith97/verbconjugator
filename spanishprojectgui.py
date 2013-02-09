@@ -1,4 +1,5 @@
 #uses theme from http://www.designkindle.com/2011/01/19/simple-ui-elements/
+#need to add affirmative/negative for commands
 import pygame
 pi = 3.14159
 import __future__
@@ -110,61 +111,91 @@ class Verb():
 		tense = "imperfect"
 		root = self.root(self.v)
 		type = self.ending(self.v)
-		irregulars = ["dar", "ser", "ver"]
-		'''if self.v in irregulars:
-			if self.v == "dar":
+		irregulars = ["ir", "ser", "ver"]
+		if self.v in irregulars:
+			if self.v == "ir":
 				if self.p == "yo":
-					conjugation = "de (with accent)"
+					conjugation = "iba"
 				elif self.p == "tu":
-					conjugation - "des"
+					conjugation - "ibas"
 				elif self.p == "el" or self.p == "ella" or self.p == "usted" or self.p == "ud":
-					conjugation = "de (with accent)"
+					conjugation = "iba"
 				elif self.p == "nosotros" or self.p == "nosotras":
-					conjugation = '''
+					conjugation = "ibamos (with accent over i)"
+				elif self.p == "vosotros" or self.p == "vosotras":
+					conjugation = "ibais"
+				elif self.p == "ellos" or self.p == "ellas":
+					conjugation = "iban"
+			elif self.v == "ver":
+				if self.p == "yo":
+					conjugation = "veia (with accent over i)"
+				elif self.p == "tu":
+					conjugation - "veias (with accent over i)"
+				elif self.p == "el" or self.p == "ella" or self.p == "usted" or self.p == "ud":
+					conjugation = "veia (with accent over i)"
+				elif self.p == "nosotros" or self.p == "nosotras":
+					conjugation = "veiamos (with accent over i)"
+				elif self.p == "vosotros" or self.p == "vosotras":
+					conjugation = "veiais (with accent over i)"
+				elif self.p == "ellos" or self.p == "ellas":
+					conjugation = "veian (with accent over i)"
+			elif self.v == "ser":
+				if self.p == "yo":
+					conjugation = "era"
+				elif self.p == "tu":
+					conjugation - "eras"
+				elif self.p == "el" or self.p == "ella" or self.p == "usted" or self.p == "ud":
+					conjugation = "era"
+				elif self.p == "nosotros" or self.p == "nosotras":
+					conjugation = "eramos (with accent over e)"
+				elif self.p == "vosotros" or self.p == "vosotras":
+					conjugation = "erais"
+				elif self.p == "ellos" or self.p == "ellas":
+					conjugation = "eran"
 					
-		
-		if type == "ar":
-			if self.p == "yo":
-				add = "aba"
-			elif self.p == "tu":
-				add = "abas"
-			elif self.p == "el" or self.p == "ella" or self.p == "usted" or self.p == "ud":
-				add = "aba"
-			elif self.p == "nosotros" or self.p == "nosotras":
-				add = "abamos (accent over first a)"
-			elif self.p == "vosotros" or self.p == "vosotras":
-				add = "abais (accent over the a in ais)"
-			elif self.p == "ellos" or self.p == "ellas" or self.p == "ustedes" or self.p == "uds":
-				add = "aban"
-		elif type == "er":
-			if self.p == "yo":
-				add = "ia"
-			elif self.p == "tu":
-				add = "ias"
-			elif self.p == "el" or self.p == "ella" or self.p == "usted" or self.p == "ud":
-				add = "ia"
-			elif self.p == "nosotros" or self.p == "nosotras":
-				add = "iamos"
-			elif self.p == "vosotros" or self.p == "vosotras":
-				add = "iais (accent over the e in eis)"
-			elif self.p == "ellos" or self.p == "ellas" or self.p == "ustedes" or self.p == "uds":
-				add = "ian"
-			add = add + "(accent over the i in all of them)"
-		elif type == "ir":
-			if self.p == "yo":
-				add = "ia"
-			elif self.p == "tu":
-				add = "ias"
-			elif self.p == "el" or self.p == "ella" or self.p == "usted" or self.p == "ud":
-				add = "ia"
-			elif self.p == "nosotros" or self.p == "nosotras":
-				add = "iamos"
-			elif self.p == "vosotros" or self.p == "vosotras":
-				add = "iais (accent over the i in is)"
-			elif self.p == "ellos" or self.p == "ellas" or self.p == "ustedes" or self.p == "uds":
-				add = "ian"
-			add = add + "(accent over the i in all of them)"
-		conjugation = root + add
+		else:
+			if type == "ar":
+				if self.p == "yo":
+					add = "aba"
+				elif self.p == "tu":
+					add = "abas"
+				elif self.p == "el" or self.p == "ella" or self.p == "usted" or self.p == "ud":
+					add = "aba"
+				elif self.p == "nosotros" or self.p == "nosotras":
+					add = "abamos (accent over first a)"
+				elif self.p == "vosotros" or self.p == "vosotras":
+					add = "abais (accent over the a in ais)"
+				elif self.p == "ellos" or self.p == "ellas" or self.p == "ustedes" or self.p == "uds":
+					add = "aban"
+			elif type == "er":
+				if self.p == "yo":
+					add = "ia"
+				elif self.p == "tu":
+					add = "ias"
+				elif self.p == "el" or self.p == "ella" or self.p == "usted" or self.p == "ud":
+					add = "ia"
+				elif self.p == "nosotros" or self.p == "nosotras":
+					add = "iamos"
+				elif self.p == "vosotros" or self.p == "vosotras":
+					add = "iais (accent over the e in eis)"
+				elif self.p == "ellos" or self.p == "ellas" or self.p == "ustedes" or self.p == "uds":
+					add = "ian"
+				add = add + "(accent over the i in all of them)"
+			elif type == "ir":
+				if self.p == "yo":
+					add = "ia"
+				elif self.p == "tu":
+					add = "ias"
+				elif self.p == "el" or self.p == "ella" or self.p == "usted" or self.p == "ud":
+					add = "ia"
+				elif self.p == "nosotros" or self.p == "nosotras":
+					add = "iamos"
+				elif self.p == "vosotros" or self.p == "vosotras":
+					add = "iais (accent over the i in is)"
+				elif self.p == "ellos" or self.p == "ellas" or self.p == "ustedes" or self.p == "uds":
+					add = "ian"
+				add = add + "(accent over the i in all of them)"
+			conjugation = root + add
 		#print "The", self.p, "form of",self.v, "in", tense, "is", conjugation, "."
 		self.c = conjugation
 				
@@ -185,8 +216,10 @@ class Verb():
 				self.v = self.v.replace("o", "ue")
 				root = self.root(self.v)
 				self.v = verb'''
-		for i in range(len(fcirreg.eiestemchange)):
-			fcirreg.eiestemchange[i] = " " + fcirreg.eiestemchange[i]
+		'''for i in range(len(fcirreg.eiestemchange)):
+			fcirreg.eiestemchange[i] = " " + fcirreg.eiestemchange[i]'''
+		
+				
 		if self.v in fcirreg.eiestemchange:
 			if self.p == "nosotros" or self.p == "vosotros":
 				pass
@@ -195,8 +228,8 @@ class Verb():
 				self.v = self.v.replace("e", "ie")
 				root = self.root(self.v)
 				self.v = verb
-		for i in range(len(fcirreg.eistemchange)):
-			fcirreg.eistemchange[i] = " " + fcirreg.eistemchange[i]
+		'''for i in range(len(fcirreg.eistemchange)):
+			fcirreg.eistemchange[i] = " " + fcirreg.eistemchange[i]'''
 		if self.v in fcirreg.eistemchange:
 			if self.p == "nosotros" or self.p == "vosotros":
 				pass
@@ -205,8 +238,8 @@ class Verb():
 				self.v = self.v.replace("e", "i")
 				root = self.root(self.v)
 				self.v = verb
-		for i in range(len(fcirreg.ouestemchange)):
-			fcirreg.ouestemchange[i] = " " + fcirreg.ouestemchange[i]
+		'''for i in range(len(fcirreg.ouestemchange)):
+			fcirreg.ouestemchange[i] = " " + fcirreg.ouestemchange[i]'''
 		if self.v in fcirreg.ouestemchange:
 			if self.p == "nosotros" or self.p == "vosotros":
 				pass
@@ -220,7 +253,11 @@ class Verb():
 		
 		if type == "ar":
 			if self.p == "yo":
-				add = "o"
+				if self.v in fcirreg.presentirregulars:
+					root = ""
+					add = fcirreg.presentirregulars[self.v]
+				else:
+					add = "o"
 			elif self.p == "tu":
 				add = "as"
 			elif self.p == "el" or self.p == "ella" or self.p == "usted" or self.p == "ud":
@@ -233,7 +270,11 @@ class Verb():
 				add = "an"
 		elif type == "er":
 			if self.p == "yo":
-				add = "o"
+				if self.v in fcirreg.presentirregulars:
+					root = ""
+					add = fcirreg.presentirregulars[self.v]
+				else:
+					add = "o"
 			elif self.p == "tu":
 				add = "es"
 			elif self.p == "el" or self.p == "ella" or self.p == "usted" or self.p == "ud":
@@ -246,7 +287,11 @@ class Verb():
 				add = "en"
 		elif type == "ir":
 			if self.p == "yo":
-				add = "o"
+				if self.v in fcirreg.presentirregulars:
+					root = ""
+					add = fcirreg.presentirregulars[self.v]
+				else:
+					add = "o"
 			elif self.p == "tu":
 				add = "es"
 			elif self.p == "el" or self.p == "ella" or self.p == "usted" or self.p == "ud":
@@ -257,6 +302,26 @@ class Verb():
 				add = "is (accent over the i in is)"
 			elif self.p == "ellos" or self.p == "ellas" or self.p == "ustedes" or self.p == "uds":
 				add = "en"
+				
+		if self.v == "ser":
+			if self.p == "yo":
+				root = ""
+				add = "soy"
+			elif self.p == "tu":
+				root = ""
+				add = "eres"
+			elif self.p == "el" or self.p == "ella" or self.p == "usted" or self.p == "ud":
+				root = ""
+				add = "es"
+			elif self.p == "nosotros" or self.p == "nosotras":
+				root = ""
+				add = "somos"
+			elif self.p == "vosotros" or self.p == "vosotras":
+				root = ""
+				add = "sois"
+			elif self.p == "ellos" or self.p == "ellas" or self.p == "ustedes" or self.p == "uds":
+				root = ""
+				add = "son"
 		conjugation = root + add
 		if self.m == "indicative":
 			#print "The", self.p, "form of",self.v, "in", tense, "is", conjugation, "."
@@ -389,49 +454,89 @@ class Verb():
 	def conjugatePreteriteIndicative(self):
 		root = self.root(self.v)
 		type = self.ending(self.v)
+		#fix verbs with car/gar/zar ending page 10 spanish book
 		if self.v in fcirreg.stemchangepast:
 			root = fcirreg.stemchangepast[self.v]
-			print "hi"
 			if self.p == "yo":
 				add = "e"
 			elif self.p == "tu":
 				add = "iste"
 			elif self.p == "el" or self.p == "ella" or self.p == "usted" or self.p == "ud":
-				add = "o"
+				if self.v == "hacer":
+					root = ""
+					add = "hizo"
+				else:
+					add = "o"
+			elif self.p == "nosotros" or self.p == "nosotras":
+				add = "imos"
+			elif self.p == "vosotros" or self.p == "vosotras":
+				add = "isteis"
+			elif self.p == "ellos" or self.p == "ellas" or self.p == "ustedes" or self.p == "uds":
+				if re.findall("j$", root) == ['j']:
+					add = "eron"
+				else:
+					add = "ieron"
+			type = "irregular"
+			conjugation = root + add
+		elif self.v == "ser" or self.v == "ir":
+			if self.p == "yo":
+				conjugation = "fui"
+			elif self.p == "tu":
+				conjugation = "fuiste"
+			elif self.p == "el" or self.p == "ella" or self.p == "usted" or self.p == "ud":
+				conjugation = "fue"
+			elif self.p == "nosotros" or self.p == "nosotras":
+				conjugation = "fuimos"
+			elif self.p == "vosotros" or self.p == "vosotras":
+				conjugation = "fuisteis"
+			elif self.p == "ellos" or self.p == "ellas" or self.p == "ustedes" or self.p == "uds":
+				conjugation = "fueron"
+		elif self.v == "dar" or self.v == "ver":
+			if self.v == "dar":
+				root ="d"
+			elif self.v == "ver":
+				root = "v"
+			if self.p == "yo":
+				add = "i"
+			elif self.p == "tu":
+				add = "iste"
+			elif self.p == "el" or self.p == "ella" or self.p == "usted" or self.p == "ud":
+				add = "io"
 			elif self.p == "nosotros" or self.p == "nosotras":
 				add = "imos"
 			elif self.p == "vosotros" or self.p == "vosotras":
 				add = "isteis"
 			elif self.p == "ellos" or self.p == "ellas" or self.p == "ustedes" or self.p == "uds":
 				add = "ieron"
-				type = "irregular"
-		if type == "ar":
-			if self.p == "yo":
-				add = "e (with accent)"
-			elif self.p == "tu":
-				add = "aste"
-			elif self.p == "el" or self.p == "ella" or self.p == "usted" or self.p == "ud":
-				add = "o (with accent)"
-			elif self.p == "nosotros" or self.p == "nosotras":
-				add = "amos"
-			elif self.p == "vosotros" or self.p == "vosotras":
-				add = "asteis"
-			elif self.p == "ellos" or self.p == "ellas" or self.p == "ustedes" or self.p == "uds":
-				add = "aron"
-		elif type == "er" or type == "ir":
-			if self.p == "yo":
-				add = "i (with accent)"
-			elif self.p == "tu":
-				add = "iste"
-			elif self.p == "el" or self.p == "ella" or self.p == "usted" or self.p == "ud":
-				add = "io (with accent over o)"
-			elif self.p == "nosotros" or self.p == "nosotras":
-				add = "imos"
-			elif self.p == "vosotros" or self.p == "vosotras":
-				add = "isteis (accent over the e in eis)"
-			elif self.p == "ellos" or self.p == "ellas" or self.p == "ustedes" or self.p == "uds":
-				add = "ieron"
-		conjugation = root + add
+			conjugation = root + add
+		else:
+			if type == "ar":
+				if self.p == "yo":
+					add = "e (with accent)"
+				elif self.p == "tu":
+					add = "aste"
+				elif self.p == "el" or self.p == "ella" or self.p == "usted" or self.p == "ud":
+					add = "o (with accent)"
+				elif self.p == "nosotros" or self.p == "nosotras":
+					add = "amos"
+				elif self.p == "vosotros" or self.p == "vosotras":
+					add = "asteis"
+				elif self.p == "ellos" or self.p == "ellas" or self.p == "ustedes" or self.p == "uds":
+					add = "aron"
+			elif type == "er" or type == "ir":
+				if self.p == "yo":
+					add = "i (with accent)"
+				elif self.p == "tu":
+					add = "iste"
+				elif self.p == "el" or self.p == "ella" or self.p == "usted" or self.p == "ud":
+					add = "io (with accent over o)"
+				elif self.p == "nosotros" or self.p == "nosotras":
+					add = "imos"
+				elif self.p == "vosotros" or self.p == "vosotras":
+					add = "isteis (accent over the e in eis)"
+				elif self.p == "ellos" or self.p == "ellas" or self.p == "ustedes" or self.p == "uds":
+					add = "ieron"
+			conjugation = root + add
 		
 		if self.m == "indicative":
 			#print "The", self.p, "form of",self.v, "in", self.t, self.m, "is", conjugation, "."
@@ -677,24 +782,24 @@ block_list = pygame.sprite.RenderPlain()
 all_sprites_list = pygame.sprite.RenderPlain()
 
 block = Block(white, 80,25)
-block2 = Block(aqua, 100,25)
-block3 = Block(aqua, 100, 25)
-block4 = Block(aqua, 100, 25)
-block5 = Block(aqua, 100,22)
-block6 = Block(aqua, 100, 25)
-block7 = Block(aqua, 100, 25)
-block8 = Block(aqua, 100,25)
-block9 = Block(aqua, 100, 22)
-block10 = Block(aqua, 100, 25)
-block11 = Block(yellow, 100,25)
-block12 = Block(yellow, 100, 25)
-block13 = Block(yellow, 100,22)
-block14 = Block(aqua, 100,25)
-block15 = Block(aqua, 100,25)
-block16 = Block(aqua, 100,25)
-block17 = Block(aqua, 100,25)
-block18 = Block(aqua, 100,25)
-block19 = Block(aqua, 100,20)
+block2 = Block(aqua, 118,25)
+block3 = Block(aqua, 118, 25)
+block4 = Block(aqua, 118, 25)
+block5 = Block(aqua, 118,22)
+block6 = Block(aqua, 118, 25)
+block7 = Block(aqua, 118, 25)
+block8 = Block(aqua, 118,25)
+block9 = Block(aqua, 118, 22)
+block10 = Block(aqua, 118, 25)
+block11 = Block(yellow, 118,25)
+block12 = Block(yellow, 118, 25)
+block13 = Block(yellow, 118,22)
+block14 = Block(aqua, 118,25)
+block15 = Block(aqua, 118,25)
+block16 = Block(aqua, 118,25)
+block17 = Block(aqua, 118,25)
+block18 = Block(aqua, 118,25)
+block19 = Block(aqua, 118,20)
 all_sprites_list.add(block)
 all_sprites_list.add(block2)
 all_sprites_list.add(block3)
@@ -847,9 +952,12 @@ while done == False:
 				#person = "yo"
 				#tense = "present"
 				#mood = "indicative"
-				verb1 = Verb(verb, person, tense, mood)	
-				verb1.whichmood()
-				sentence = "The " + verb1.p + " form of" + verb1.v + " in " + verb1.t + " " + verb1.m + " is " + verb1.c + "."
+				try:
+					verb1 = Verb(verb, person, tense, mood)	
+					verb1.whichmood()
+					sentence = "The " + verb1.p + " form of " + verb1.v + " in " + verb1.t + " " + verb1.m + " is " + verb1.c + "."
+				except:
+					sentence = "Please specify the verb, person, tense, and mood"
 				#conjugation = verb1.c
 			elif event.key == pygame.K_BACKSPACE:
 				verb = verb[:-1]
@@ -994,7 +1102,7 @@ while done == False:
 	#All game logic below this comment
 	
 	if block.state == "on":
-		verb = " "
+		verb = ""
 		sentence = " "
 		textbox = waitinginput
 		pmenu = personmenu
@@ -1013,7 +1121,7 @@ while done == False:
 	
 	font = pygame.font.Font(None,25)
 	text = font.render(verb, True, black)
-	screen.blit(text, [200,20])
+	screen.blit(text, [205,20])
 	
 	font = pygame.font.Font(None,25)
 	text = font.render(sentence, True, black)
