@@ -41,6 +41,10 @@ tenseconditional = pygame.image.load("tenseselectionselectconditional_edited-3.j
 tmenu = tensemenu
 
 tensemenu2 = pygame.image.load("tenseselection2_edited-1.jpg")
+tensepresentperfect = pygame.image.load("tenseselection2selectpresentperfect_edited-3.jpg")
+tensepluperfect = pygame.image.load("tenseselection2selectpluperfect_edited-3.jpg")
+tensefutureperfect = pygame.image.load("tenseselection2selectfutureperfect_edited-4.jpg")
+tenseconditionalperfect = pygame.image.load("tenseselection2selectconditionalperfect_edited-5.jpg")
 tmenu2 = tensemenu2
 
 moodmenu = pygame.image.load("moodselection_edited-1.jpg")
@@ -911,12 +915,16 @@ while done == False:
 			tmenu = tensefuture
 		if block7.state == "on":
 			tense = "present perfect"
+			tmenu2 = tensepresentperfect
 		if block8.state == "on":
 			tense = "pluperfect"
+			tmenu2 = tensepluperfect
 		if block9.state == "on":
 			tense = "conditional perfect"
+			tmenu2 = tenseconditionalperfect
 		if block10.state == "on":
 			tense = "future perfect"
+			tmenu2 = tensefutureperfect
 		if block11.state == "on":
 			mood = "indicative"
 			mmenu = moodindicative
